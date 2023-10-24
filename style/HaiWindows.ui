@@ -1,0 +1,1503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>window</class>
+ <widget class="QWidget" name="window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>714</width>
+    <height>462</height>
+   </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">* {
+    color: #fff;
+}
+QPushButton {
+    background-color: rgba(250, 0, 0);
+}
+
+#centralwidget {
+    border-radius: 8px;
+}
+#background {
+    background-color: rgb(43, 45, 48);
+    border-radius: 8px;
+}
+#top_menus {
+    border-bottom: 2px solid rgb(30, 31, 34);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    margin-left: 2px;
+    padding-right: 2px;
+}
+#right_menus {
+    border-left: 1px solid rgb(30, 31, 34);
+}
+#left_menus, #tree_menus {
+    border-right: 1px solid rgb(30, 31, 34);
+}
+#bottom_menus {
+    border-top: 1px solid rgb(30, 31, 34);
+}
+#tools_menus_background {
+    border-bottom: 1px solid rgb(30, 31, 34);
+}
+#close_button, #max_button, 
+#min_button, #setting_button, 
+#plob_search_button, #cooperate_with_button, 
+#icons_button, #menus_button, 
+#recently_lately_button {
+    background-color: rgba(30, 30, 30, 0);
+    margin-bottom: 2px;
+}
+#close_button:hover {
+    background-color: rgb(232, 17, 35);
+    border-top-right-radius: 8px;
+    margin-bottom: 2px;
+}
+#max_button:hover, 
+#recently_lately_button:hover, 
+#menus_button:hover, 
+#min_button:hover, 
+#setting_button:hover, 
+#plob_search_button:hover, 
+#cooperate_with_button:hover,
+#project_button:hover {
+    background-color: rgb(56, 58, 61);
+    border-radius:none;
+}
+#project_button, #problem_button, 
+#notice_button, #update_button,
+#external_tool_display {
+    color: rgb(255, 255, 255);
+    background-color: rgba(30, 30, 30, 0);
+}
+#project_button:hover, #problem_button:hover, 
+#notice_button:hover, #update_button:hover,
+#external_tool_display:hover {
+    /* background-color: rgb(53, 116, 239); 选中颜色*/
+    background-color: rgb(56, 58, 61);
+    border-radius:5px;
+}
+#dir_tree {
+    background-color: rgba(30, 30, 30, 0);
+    border: none;
+}
+QTreeWidget {
+    outline: none;
+}
+QTreeWidget::item:selected {
+    color: #fff;
+    border-radius: 4px;
+    background-color: rgba(46, 67, 110, 1);
+}
+QTreeWidget::item {
+    border: none;
+    height: 20px;
+    show-decoration-selected: 1;
+}
+QScrollBar:horizontal {
+    height:8px;
+    background:rgba(0,0,0,0%);
+    margin:0px,0px,0px,0px;
+    border-radius:4px;
+}
+QScrollBar:vertical {
+    width:8px;
+    background:rgba(0,0,0,0%);
+    margin:0px,0px,0px,0px;
+    border-radius:4px;
+}
+QScrollBar::handle:horizontal {
+    height:8px;
+    background:rgba(255, 255, 255, 0.17);
+    border-radius:4px;   
+    min-width:20;
+}
+QScrollBar::handle:vertical {
+    width:8px;
+    background:rgba(255, 255, 255, 0.17);
+    border-radius:4px;   
+    min-height:20;
+}
+QScrollBar::handle:horizontal:hover,
+QScrollBar::handle:vertical:hover {
+    background:rgba(255, 255, 255, 0.3);
+}
+QScrollBar::sub-page:horizontal,
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-line:horizontal, 
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-page:vertical,
+QScrollBar::add-page:vertical,
+QScrollBar::sub-line:vertical, 
+QScrollBar::add-line:vertical {
+    background: rgba(255, 0, 0, 0);
+}
+QListWidget:vertical {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+QListWidget::item {
+    height: 20px;
+}
+#canvas {
+    background-color: rgb(30, 31, 34);
+}
+#canvas_tool_list {
+    border-top: 1px solid red(30, 31, 34);
+}
+QSplitter::handle {
+    background: rgb(30, 31, 34);
+}
+#menus_button {
+    background-color: rgba(0,0,0,0);
+	border-radius:none;
+    /* padding-right:3px; */
+}
+#menus_button::menu-indicator {
+    image: none;
+}
+.QToolTip {
+    background-color: #f30000; /* 设置背景颜色 */
+    color: #d30000; /* 设置文本颜色 */
+    border: 1px solid #180000; /* 设置边框 */
+    padding: 5px; /* 设置内边距 */
+    font-size: 12px; /* 设置字体大小 */
+}</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="background" native="true">
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <layout class="QVBoxLayout" name="background_layout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QWidget" name="top_menus" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item alignment="Qt::AlignLeft">
+          <widget class="QWidget" name="top_right_menu" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>36</width>
+             <height>36</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
+           <layout class="QHBoxLayout" name="top_right_menus_layout">
+            <property name="spacing">
+             <number>8</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="icons_button">
+              <property name="minimumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="mouseTracking">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../static/black_theme/logo.ico</normaloff>../static/black_theme/logo.ico</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="menus_button">
+              <property name="minimumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../static/black_theme/汉堡图标_hamburger-button.svg</normaloff>../static/black_theme/汉堡图标_hamburger-button.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>16</width>
+                <height>16</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item alignment="Qt::AlignLeft">
+             <widget class="QPushButton" name="recently_lately_button">
+              <property name="minimumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>960</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>HaiPro</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>C:/Users/22143/.designer/backup/staitc/black_theme/下_down.svg</normaloff>C:/Users/22143/.designer/backup/staitc/black_theme/下_down.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>16</width>
+                <height>16</height>
+               </size>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+              <property name="autoRepeat">
+               <bool>false</bool>
+              </property>
+              <property name="autoExclusive">
+               <bool>false</bool>
+              </property>
+              <property name="autoDefault">
+               <bool>false</bool>
+              </property>
+              <property name="default">
+               <bool>false</bool>
+              </property>
+              <property name="flat">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignRight">
+          <widget class="QWidget" name="top_left_menu" native="true">
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
+           <layout class="QHBoxLayout" name="top_left_menus_layout">
+            <property name="spacing">
+             <number>8</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="cooperate_with_button">
+              <property name="minimumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>多人协同</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../static/black_theme/连接点_connection-point.svg</normaloff>../static/black_theme/连接点_connection-point.svg</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="plob_search_button">
+              <property name="minimumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>随处搜索</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../static/black_theme/搜索_search.svg</normaloff>../static/black_theme/搜索_search.svg</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="setting_button">
+              <property name="minimumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>设置</string>
+              </property>
+              <property name="statusTip">
+               <string/>
+              </property>
+              <property name="whatsThis">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../static/black_theme/设置_setting.svg</normaloff>../static/black_theme/设置_setting.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>20</width>
+                <height>16</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item alignment="Qt::AlignVCenter">
+             <widget class="QPushButton" name="min_button">
+              <property name="minimumSize">
+               <size>
+                <width>35</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>4525</width>
+                <height>12425</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>最小化窗口</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../static/black_theme/减_minus.svg</normaloff>../static/black_theme/减_minus.svg</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="max_button">
+              <property name="minimumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>最大化窗口</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../static/black_theme/方形_square.svg</normaloff>../static/black_theme/方形_square.svg</iconset>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+             <widget class="QPushButton" name="close_button">
+              <property name="minimumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../static/black_theme/关闭_close.svg</normaloff>../static/black_theme/关闭_close.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>16</width>
+                <height>16</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="window_content_layout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QWidget" name="left_menus" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>32</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>32</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="mouseTracking">
+           <bool>true</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <layout class="QVBoxLayout" name="left_menus_layout">
+           <property name="spacing">
+            <number>10</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item alignment="Qt::AlignTop">
+            <widget class="QWidget" name="left_top_menus" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>32</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>32</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="mouseTracking">
+              <bool>true</bool>
+             </property>
+             <layout class="QVBoxLayout" name="left_top_menus_layout">
+              <property name="spacing">
+               <number>8</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QPushButton" name="project_button">
+                <property name="minimumSize">
+                 <size>
+                  <width>26</width>
+                  <height>26</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>26</width>
+                  <height>26</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../static/black_theme/文件夹-关_folder-close.svg</normaloff>../static/black_theme/文件夹-关_folder-close.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>16</width>
+                  <height>16</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignBottom">
+            <widget class="QWidget" name="left_bottom_menus" native="true">
+             <property name="mouseTracking">
+              <bool>true</bool>
+             </property>
+             <layout class="QVBoxLayout" name="left_bottom_menus_layout">
+              <property name="spacing">
+               <number>8</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QPushButton" name="problem_button">
+                <property name="minimumSize">
+                 <size>
+                  <width>26</width>
+                  <height>26</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>26</width>
+                  <height>26</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../static/black_theme/帮助中心_helpcenter.svg</normaloff>../static/black_theme/帮助中心_helpcenter.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>16</width>
+                  <height>16</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="center" native="true">
+          <property name="mouseTracking">
+           <bool>true</bool>
+          </property>
+          <layout class="QVBoxLayout" name="centent_layout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QWidget" name="tools_menus_background" native="true">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>26</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>26</height>
+              </size>
+             </property>
+             <property name="mouseTracking">
+              <bool>true</bool>
+             </property>
+             <layout class="QHBoxLayout" name="tools_menus_background_layout">
+              <property name="spacing">
+               <number>8</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item alignment="Qt::AlignLeft">
+               <widget class="QWidget" name="tools_menus" native="true">
+                <layout class="QHBoxLayout" name="tools_menus_layout">
+                 <property name="spacing">
+                  <number>8</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>6</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>6</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="pushButton">
+                   <property name="mouseTracking">
+                    <bool>true</bool>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>C:/Users/22143/.designer/backup/staitc/black_theme/电波_waves.svg</normaloff>C:/Users/22143/.designer/backup/staitc/black_theme/电波_waves.svg</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="canvas_content" native="true">
+             <layout class="QHBoxLayout" name="centent_content__layout" stretch="1,4,1">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QWidget" name="tree_menus" native="true">
+                <property name="mouseTracking">
+                 <bool>true</bool>
+                </property>
+                <layout class="QVBoxLayout" name="dir_layout">
+                 <item>
+                  <widget class="QStackedWidget" name="menu_stacked">
+                   <widget class="QWidget" name="page">
+                    <layout class="QVBoxLayout" name="verticalLayout">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QTreeWidget" name="dir_tree">
+                       <property name="mouseTracking">
+                        <bool>true</bool>
+                       </property>
+                       <property name="autoFillBackground">
+                        <bool>false</bool>
+                       </property>
+                       <property name="rootIsDecorated">
+                        <bool>true</bool>
+                       </property>
+                       <property name="itemsExpandable">
+                        <bool>true</bool>
+                       </property>
+                       <property name="headerHidden">
+                        <bool>true</bool>
+                       </property>
+                       <attribute name="headerCascadingSectionResizes">
+                        <bool>false</bool>
+                       </attribute>
+                       <attribute name="headerHighlightSections">
+                        <bool>false</bool>
+                       </attribute>
+                       <attribute name="headerStretchLastSection">
+                        <bool>true</bool>
+                       </attribute>
+                       <column>
+                        <property name="text">
+                         <string>filename</string>
+                        </property>
+                       </column>
+                       <item>
+                        <property name="text">
+                         <string>sadasd</string>
+                        </property>
+                        <item>
+                         <property name="text">
+                          <string>HAI</string>
+                         </property>
+                         <item>
+                          <property name="text">
+                           <string>ASDASD</string>
+                          </property>
+                          <item>
+                           <property name="text">
+                            <string>ASDASD</string>
+                           </property>
+                           <item>
+                            <property name="text">
+                             <string>ASDASD</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                           <item>
+                            <property name="text">
+                             <string>新建项目</string>
+                            </property>
+                           </item>
+                          </item>
+                         </item>
+                        </item>
+                       </item>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="page_2"/>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="canvas" native="true">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="mouseTracking">
+                 <bool>true</bool>
+                </property>
+                <layout class="QHBoxLayout" name="canvas_layout">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="canvas_list" native="true">
+                <property name="mouseTracking">
+                 <bool>true</bool>
+                </property>
+                <layout class="QVBoxLayout" name="canvas_tool_list_layout">
+                 <item>
+                  <layout class="QHBoxLayout" name="canvas_tool_list_top_layout">
+                   <item>
+                    <widget class="QLabel" name="count_label">
+                     <property name="mouseTracking">
+                      <bool>true</bool>
+                     </property>
+                     <property name="text">
+                      <string>总数：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="count_value">
+                     <property name="mouseTracking">
+                      <bool>true</bool>
+                     </property>
+                     <property name="text">
+                      <string>100</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QListWidget" name="canvas_tool_list">
+                   <property name="mouseTracking">
+                    <bool>true</bool>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>test 1</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>test 2</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="right_menus" native="true">
+          <property name="minimumSize">
+           <size>
+            <width>32</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>32</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="mouseTracking">
+           <bool>true</bool>
+          </property>
+          <layout class="QVBoxLayout" name="right_menus_layout">
+           <property name="spacing">
+            <number>10</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item alignment="Qt::AlignTop">
+            <widget class="QWidget" name="right_top_menus" native="true">
+             <property name="mouseTracking">
+              <bool>true</bool>
+             </property>
+             <layout class="QVBoxLayout" name="right_top_menus_layout">
+              <property name="spacing">
+               <number>8</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QPushButton" name="notice_button">
+                <property name="minimumSize">
+                 <size>
+                  <width>26</width>
+                  <height>26</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>26</width>
+                  <height>26</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../static/black_theme/消息_message-one.svg</normaloff>../static/black_theme/消息_message-one.svg</iconset>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QPushButton" name="external_tool_display">
+                <property name="minimumSize">
+                 <size>
+                  <width>26</width>
+                  <height>26</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>26</width>
+                  <height>26</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../static/black_theme/预览-关闭_preview-close-one.svg</normaloff>../static/black_theme/预览-关闭_preview-close-one.svg</iconset>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignBottom">
+            <widget class="QWidget" name="right_bottom_menus" native="true">
+             <property name="mouseTracking">
+              <bool>true</bool>
+             </property>
+             <layout class="QVBoxLayout" name="right_bottom_menus_layout">
+              <property name="spacing">
+               <number>8</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QPushButton" name="update_button">
+                <property name="minimumSize">
+                 <size>
+                  <width>26</width>
+                  <height>26</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>26</width>
+                  <height>26</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../static/black_theme/刷新_refresh.svg</normaloff>../static/black_theme/刷新_refresh.svg</iconset>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QWidget" name="bottom_menus" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>26</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>26</height>
+         </size>
+        </property>
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+        <layout class="QHBoxLayout" name="bottom_menus_layout">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item alignment="Qt::AlignLeft">
+          <widget class="QWidget" name="bottom_left_menus" native="true">
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
+           <layout class="QHBoxLayout" name="bottom_left_menus_layout">
+            <property name="spacing">
+             <number>8</number>
+            </property>
+            <property name="leftMargin">
+             <number>6</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="file_path">
+              <property name="mouseTracking">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>newTools &gt; haiPero</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignRight">
+          <widget class="QWidget" name="bottom_right_menus" native="true">
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
+           <layout class="QHBoxLayout" name="bottom_right_menus_layout">
+            <property name="spacing">
+             <number>8</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>6</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="mouseTracking">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>230043</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

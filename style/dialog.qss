@@ -1,0 +1,22 @@
+* {
+    color: rgb(223, 225, 229);
+}
+QDialog {
+    background: rgb(43, 45, 48);
+}
+QLineEdit {
+    background: rgb(43, 45, 48);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid red;
+}
+QLineEdit:focus {
+    border-bottom: 1px solid rgb(0, 26, 255);
+}
+#widget {
+    background: rgb(43, 45, 48);
+}
+QPushButton {
+    background: rgb(57, 59, 64);
+}
