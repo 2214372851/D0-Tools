@@ -1,6 +1,6 @@
 # D0 Tools
 
-![示例](static/Snipaste_2023-10-24_20-23-06.png)
+![示例](Snipaste_2023-10-24_20-23-06.png)
 
 #### recommend
 The toolset currently includes a data annotation tool.
