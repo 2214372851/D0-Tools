@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Setting</class>
+ <widget class="QWidget" name="Setting">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>550</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>550</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>550</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">* {
+    color: #b5b6b8;
+}
+#Setting {
+    background: #2b2d30;
+}
+#tab_window {
+    background: #2b2d30;
+}#Setting {
+    background: #2b2d30;
+}
+#tab_window {
+    background: #2b2d30;
+}
+QTabWidget::pane {
+    border: 1px solid #2b2d30;
+}
+QTabBar::tab{
+    background-color: #2b2d30;
+	font-family:Consolas;
+	font-size:8pt;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	min-width: 8px;
+	padding: 5px;
+}
+QTabBar::tab:selected{
+    background-color: #1e1f22;
+}
+QTabBar::tab:hover {
+    background-color: #1e1f22;
+}
+QTabWidget::pane {
+    border: 1px solid #2b2d30;
+}
+QTabBar::tab{
+    background-color: #2b2d30;
+	font-family:Consolas;
+	font-size:8pt;
+	color:#ced4da;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	min-width: 8px;
+	padding: 5px;
+}
+QTabBar::tab:hover {
+    background-color: #1e1f22;
+}
+#user {
+    background-color: #1e1f22;
+    border-radius: 10px;
+}
+QPushButton {
+    background: #1e1f22;
+}
+QPushButton:hover {
+    background: #1e1f22;
+}
+QComboBox{
+    background: #2b2d30;
+    font-size:14px;
+    padding: 1px 15px 1px 3px;
+    border:1px solid #1e1f22;
+    border-radius:5px 5px 0px 0px;
+  } 
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+    border:none;
+}
+QComboBox QAbstractItemView{
+	background:#2b2d30;
+    border:1px solid #1e1f22;
+    border-radius:0px 0px 5px 5px;
+	font-size:14px;
+    outline: 0px;
+  }</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QTabWidget" name="tab_window">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="user_page">
+      <attribute name="title">
+       <string>账号设置</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3" stretch="4,1,1,1">
+       <item>
+        <widget class="QWidget" name="user" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="leftMargin">
+           <number>100</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="sizeConstraint">
+             <enum>QLayout::SetDefaultConstraint</enum>
+            </property>
+            <item>
+             <widget class="QLabel" name="username">
+              <property name="mouseTracking">
+               <bool>false</bool>
+              </property>
+              <property name="tabletTracking">
+               <bool>false</bool>
+              </property>
+              <property name="acceptDrops">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>账号：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="username_value">
+              <property name="text">
+               <string>admin</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="validity">
+              <property name="text">
+               <string>有效期：</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="validity_value">
+              <property name="text">
+               <string>2023-6-16</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="userVerticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>注销</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="userVerticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="general_page">
+      <attribute name="title">
+       <string>通用设置</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,1,2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="language">
+           <property name="text">
+            <string>语言：</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="language_value">
+           <item>
+            <property name="text">
+             <string>中文</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>English</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="update">
+           <property name="text">
+            <string>更新：</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="update_value">
+           <property name="text">
+            <string>检查更新</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
