@@ -8,7 +8,6 @@ from functools import partial
 from pathlib import Path
 from threading import Thread
 
-import filetype
 from PySide6 import QtGui, QtWidgets, QtCore
 
 from style import HaiWindowsUi
