@@ -5,8 +5,8 @@
 # @File    : config_builder.py
 # @Project : V0.0.1-alpha
 from collections import OrderedDict
+
 from PySide6 import QtCore
-from typing import Literal, List, Dict, TypedDict
 
 sets = QtCore.QSettings("D0.ini", QtCore.QSettings.IniFormat)
 
@@ -23,12 +23,12 @@ data = {
     'auto_dir': True,
     'sidebar': True,
     'image_options': [
-        {
-            'name': 'definition',
-            'type': 'select',
-            '中文_options': ['清晰', '模糊'],
-            'English_options': ['distinct', 'dim']
-        },
+        # {
+        #     'name': 'definition',
+        #     'type': 'select',
+        #     '中文_options': ['清晰', '模糊'],
+        #     'English_options': ['distinct', 'dim']
+        # },
         {
             'name': 'invalid',
             'type': 'button',
@@ -44,9 +44,11 @@ data = {
                 '中文_name': '标签',
                 'English_name': 'label',
                 'type': 'select',
-                '中文_options': ['手机', '脸'],
-                'English_options': ['phone', 'fack'],
-                'option_style': [(255, 0, 123), (123, 255, 255)]
+                '中文_options': ['人', '卡车', '汽车', '停车标志', '摩托车', '单车', '红绿灯', '公共汽车'],
+                'English_options': ['person', 'truck', 'car', 'stop_sign', 'motorcycle', 'bicycle', 'traffic_light',
+                                    'bus'],
+                'option_style': [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (255, 0, 255), (0, 255, 255),
+                                 (128, 0, 128), (255, 165, 0)]
             },
             # '实例': {
             #     'English_name': 'id',
@@ -67,13 +69,13 @@ data = {
             #     '中文_options': ['男', '女', '无'],
             #     'English_options': ['man', 'girl', 'notHave'],
             # },
-            '详情': {
-                '中文_name': '模糊度',
-                'English_name': 'info',
-                'type': 'multiple',
-                '中文_options': ['模糊', '清晰', '无'],
-                'English_options': ['dim', 'distinct', 'notHave'],
-            },
+            # '详情': {
+            #     '中文_name': '模糊度',
+            #     'English_name': 'info',
+            #     'type': 'multiple',
+            #     '中文_options': ['模糊', '清晰', '无'],
+            #     'English_options': ['dim', 'distinct', 'notHave'],
+            # },
         }),
         # 是否加密
         'encipher': False,
@@ -99,15 +101,26 @@ data = {
         # 展示文件类型
         'show_file_type': ['.png', '.jpg'],
         # 运行允许的模式
-        'role_mode': {'rect', 'poly', 'line', 'point'},
+        # 'role_mode': {'rect', 'poly', 'line', 'point'},
+        'role_mode': {'rect'},
         # 绘画模式子模式（目前仅支持线模式的path选项与normal）
         'mode_type': 'path',
         # 标注模型
-        'model': 'yolov8x-seg.pt',
+        'model': 'yolov8x.pt',
         # 模型清洗label
-        'model_labels': {'person', 'bicycle', 'car', 'motorcycle', 'bus', 'train', 'truck',
-                         'traffic light', 'stop sign'}
-
+        # 'model_labels': {'truck', 'mouse', 'person', 'giraffe', 'bed',
+        #                  'skateboard', 'cell phone', 'frisbee', 'bench', 'hot dog', 'bird', 'scissors',
+        #                  'donut', 'broccoli', 'clock', 'teddy bear', 'tie', 'car', 'keyboard', 'kite',
+        #                  'baseball glove', 'sports ball', 'toaster', 'elephant', 'parking meter', 'bowl',
+        #                  'wine glass', 'laptop', 'tennis racket', 'tv', 'apple', 'bear', 'book', 'skis',
+        #                  'dining table', 'sink', 'cow', 'fire hydrant', 'microwave', 'pizza', 'banana',
+        #                  'fork', 'couch', 'sheep', 'orange', 'handbag', 'vase', 'horse', 'potted plant',
+        #                  'oven', 'cake', 'cat', 'knife', 'stop sign', 'motorcycle', 'chair', 'cup',
+        #                  'sandwich', 'spoon', 'refrigerator', 'carrot', 'dog', 'backpack', 'bottle',
+        #                  'remote', 'toilet', 'surfboard', 'bicycle', 'umbrella', 'traffic light', 'hair drier',
+        #                  'airplane', 'baseball bat', 'boat', 'bus', 'snowboard', 'zebra', 'toothbrush', 'train',
+        #                  'suitcase'}
+        'model_labels': {'person', 'truck', 'car', 'stop sign', 'motorcycle', 'bicycle', 'traffic light', 'bus'}
 
     },
 }
@@ -125,3 +138,5 @@ sets.setValue('Module', 'MOZI_IMG')
 sets.setValue('LASTFILENAME', '')
 #
 sets.sync()
+
+# 斐波那契数列

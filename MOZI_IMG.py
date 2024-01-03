@@ -60,6 +60,7 @@ class Module(model_image_canvas.Canvas):
     tool_cn_info = '墨子图像标注工具'
     tool_en_type = 'Tagging tool'
     tool_en_info = 'Mozi image annotation tool'
+    expiration_date = 1706685073
 
     def __init__(self, option_filedata: dict):
         self.plugOption = PlugOption(**option_filedata)

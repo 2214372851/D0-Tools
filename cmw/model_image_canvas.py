@@ -1,14 +1,13 @@
 import math
-import time
 from abc import ABCMeta, abstractmethod
 from pathlib import Path
 from typing import List
 
+import numpy as np
 from PIL import ImageQt, Image
 from PySide6 import QtWidgets, QtGui, QtCore
 from PySide6.QtGui import QPolygonF
 from geomdl import fitting
-import numpy as np
 
 from cmw.model_ai import UltralyticsYOLO
 from cmw.model_data import Store
@@ -31,7 +30,7 @@ class Canvas(QtWidgets.QWidget):
     tool_cn_info = '通用标注工具'
     tool_en_type = 'Tagging tool'
     tool_en_info = 'Universal annotation tool'
-    expiration_date = 1704042061
+    expiration_date = 1706685073
     sidebar = True
     isConfig = True
 
@@ -895,17 +894,20 @@ class Canvas(QtWidgets.QWidget):
                     self.draw_store.addRollback()
                 self.isSmear = True
                 self.smear = True
+        if not self.isDraw:
+            if event.key() == QtCore.Qt.Key.Key_1:
+                self.selectMode('rect')
+            elif event.key() == QtCore.Qt.Key.Key_2:
+                self.selectMode('poly')
+            elif event.key() == QtCore.Qt.Key.Key_3:
+                if self._draw_mode == 'line':
+                    self.mode_type = 'path'
 
-        if event.key() == QtCore.Qt.Key.Key_1:
-            self.selectMode('rect')
-        elif event.key() == QtCore.Qt.Key.Key_2:
-            self.selectMode('poly')
-        elif event.key() == QtCore.Qt.Key.Key_3:
-            self.selectMode('line')
-        elif event.key() == QtCore.Qt.Key.Key_4:
-            self.selectMode('point')
-        elif event.key() == QtCore.Qt.Key.Key_1:
-            self.selectMode('normal')
+                self.selectMode('line')
+            elif event.key() == QtCore.Qt.Key.Key_4:
+                self.selectMode('point')
+            elif event.key() == QtCore.Qt.Key.Key_5:
+                self.selectMode('normal')
 
         self.keyPress(event)
         self.update()
