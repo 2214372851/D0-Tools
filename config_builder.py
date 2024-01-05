@@ -101,8 +101,8 @@ data = {
         # 展示文件类型
         'show_file_type': ['.png', '.jpg'],
         # 运行允许的模式
-        # 'role_mode': {'rect', 'poly', 'line', 'point'},
-        'role_mode': {'rect'},
+        'role_mode': {'rect', 'poly', 'line', 'point'},
+        # 'role_mode': {'rect'},
         # 绘画模式子模式（目前仅支持线模式的path选项与normal）
         'mode_type': 'path',
         # 标注模型

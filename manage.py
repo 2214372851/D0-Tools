@@ -901,7 +901,6 @@ class HaiProMax(HaiWindowsUi.Ui_window):
         self.tools_temp.IS_MOVE_WINDOW = True
         self.width()
         move_position = self.tools_temp.MOVE_WINDOW_POSITION - event.position()
-        print(move_position)
         self.move(self.x() - move_position.x(), self.y() - move_position.y())
 
     def setWindowSizeMouse(self, pos_type: int) -> None:

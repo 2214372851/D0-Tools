@@ -83,6 +83,23 @@ class DataStateManage(metaclass=YunType):
         if item:
             self.selected.clearSelect()
             popMenu = QtWidgets.QMenu()
+            popMenu.setStyleSheet('''
+                            QMenu {
+                                background-color: rgb(43, 45, 48); 
+                                color: rgb(223, 225, 229); 
+                                background: rgb(43, 45, 48);
+                                border: 1px solid rgb(79, 80, 83);
+                                border-radius: 5px;
+                                padding: 2px;
+                            }
+                            QMenu::item {
+                              padding: 5px;
+                            }
+                            QMenu::item:selected {
+                                  background: rgb(46, 67, 110);
+                                  border-radius: 2px;
+                            }
+                            ''')
             itemMenu = popMenu.addAction(self.translate.get_tr('删除'))
             itemMenu.triggered.connect(lambda: self.store.delData(index))
             itemMenu = popMenu.addAction(self.translate.get_tr('上移图层'))

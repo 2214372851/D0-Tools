@@ -251,8 +251,10 @@ class Canvas(QtWidgets.QWidget):
             self.widget_toast.showInfo(self.translate.get_tr('没有权限'))
             return
         self.widget_toast.showSucceed(f'{mode_name} {self.translate.get_tr("模式")}')
+        if mode_name == 'normal':
+            mode_name = None
         self._draw_mode = mode_name
-        if mode_name not in self._preinstall_modes:
+        if mode_name not in self._preinstall_modes and mode_name != 'normal':
             mode = self.drawPlug.getMode(mode_name)
             if mode_name in self.isFill: return
             self.isFill[mode_name] = mode.is_fill

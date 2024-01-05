@@ -143,6 +143,23 @@ class PlugManage(AutoTree.Tree):
         click_path = Path(item.text(1))
         if click_path.is_dir(): return
         popMenu = QtWidgets.QMenu()
+        popMenu.setStyleSheet('''
+                QMenu {
+                    background-color: rgb(43, 45, 48); 
+                    color: rgb(223, 225, 229); 
+                    background: rgb(43, 45, 48);
+                    border: 1px solid rgb(79, 80, 83);
+                    border-radius: 5px;
+                    padding: 2px;
+                }
+                QMenu::item {
+                  padding: 5px;
+                }
+                QMenu::item:selected {
+                      background: rgb(46, 67, 110);
+                      border-radius: 2px;
+                }
+                ''')
         itemMenu = popMenu.addAction(self.main_ui.getTr('打开'))
         itemMenu.triggered.connect(lambda: self.openModule(item))
         itemMenu = popMenu.addAction(self.main_ui.getTr('删除'))
