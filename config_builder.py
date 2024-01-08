@@ -45,10 +45,111 @@ data = {
                 'English_name': 'label',
                 'type': 'select',
                 '中文_options': ['人', '卡车', '汽车', '停车标志', '摩托车', '单车', '红绿灯', '公共汽车'],
-                'English_options': ['person', 'truck', 'car', 'stop_sign', 'motorcycle', 'bicycle', 'traffic_light',
-                                    'bus'],
+                'English_options': [
+                    'person',
+                    'truck',
+                    'car',
+                    'stop_sign',
+                    'motorcycle',
+                    'bicycle',
+                    'traffic_light',
+                    'bus',
+                ],
                 'option_style': [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (255, 0, 255), (0, 255, 255),
                                  (128, 0, 128), (255, 165, 0)]
+            },
+            '属性1': {
+                '中文_name': '属性1',
+                'English_name': 'stats1',
+                'type': 'select',
+                '中文_options': [
+                    '无',
+                    '步行-人',
+                    '跑步-人',
+                    '站立的-人',
+                    '坐着-人',
+                    '绿色的信号灯',
+                    '红色的信号灯',
+                    '黄色的信号灯',
+                    '有人骑',
+                    '无人骑',
+                    '出租车',
+                    '警车',
+                    '快递车',
+                    '工业用车'
+                ],
+                'English_options': [
+                    'empty',
+                    'walking',
+                    'running',
+                    'standing',
+                    'sitting',
+                    'green',
+                    'red',
+                    'yellow',
+                    'with_rider',
+                    'without_rider',
+                    'taxi',
+                    'police',
+                    'delivery',
+                    'construction'
+                ]
+            },
+            '属性2': {
+                '中文_name': '属性2',
+                'English_name': 'stats2',
+                'type': 'select',
+                '中文_options': [
+                    '无',
+                    '儿童-人',
+                    '成年人-人',
+                    '年长的-人',
+                    '行人-信号灯',
+                    '车辆-信号灯',
+                    '黑的-车',
+                    '白色的-车',
+                    '银色的-车',
+                    '红色的-车',
+                    '蓝色的-车',
+                    '绿色的-车',
+                    '黄色的-车'
+                ],
+                'English_options': [
+                    'empty',
+                    'child',
+                    'adult',
+                    'senior',
+                    'pedestrian',
+                    'vehicle',
+                    'black',
+                    'white',
+                    'silver',
+                    'red',
+                    'blue',
+                    'green',
+                    'yellow'
+                ]
+            },
+            '属性3': {
+                '中文_name': '属性3',
+                'English_name': 'stats3',
+                'type': 'select',
+                '中文_options': [
+                    '无',
+                    '男性的-人',
+                    '女性的-人',
+                    '未指明的-人',
+                    '移动的-车',
+                    '停止的-车'
+                ],
+                'English_options': [
+                    'empty',
+                    'male',
+                    'female',
+                    'unspecified',
+                    'moving',
+                    'stopping'
+                ]
             },
             # '实例': {
             #     'English_name': 'id',

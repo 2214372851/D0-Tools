@@ -190,6 +190,8 @@ class Canvas(QtWidgets.QWidget):
         # 涂抹画笔区域
         self._smearPoly: list = []
         self.isSmear = False
+        # 选择锁定 -1为默认位,否则为锁定索引
+        self.select_lock = -1
 
     def initMenus(self):
         """
@@ -896,6 +898,8 @@ class Canvas(QtWidgets.QWidget):
                     self.draw_store.addRollback()
                 self.isSmear = True
                 self.smear = True
+        if event.key() == QtCore.Qt.Key.Key_CapsLock:
+            self.select_lock = self.selected.polyIndex
         if not self.isDraw:
             if event.key() == QtCore.Qt.Key.Key_1:
                 self.selectMode('rect')
@@ -928,6 +932,8 @@ class Canvas(QtWidgets.QWidget):
             self.is_move = False
         if event.key() == QtCore.Qt.Key.Key_R:
             self.smear = False
+        if event.key() == QtCore.Qt.Key.Key_CapsLock:
+            self.select_lock = -1
 
         self.keyRelease(event)
 
@@ -1298,7 +1304,9 @@ class Canvas(QtWidgets.QWidget):
         if self.speed_up: return
         near_distance = (5 * self.zoom)
         data_area = None
+
         for index, value in enumerate(self.draw_store.readData()):
+            if self.select_lock != -1 and index != self.select_lock: return
             mode = value['mode']
             data = value['data']
             poly_data = value['data']
