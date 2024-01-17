@@ -15,6 +15,7 @@ class ModelMode(metaclass=ABCMeta):
     画布插件基类指定工厂模式
     """
     name = None
+    # 删除点的基数
     rule = 1
     is_fill = False
 
@@ -46,3 +47,13 @@ class ModelMode(metaclass=ABCMeta):
         :return:
         """
         return copy_temp_data, option_data
+
+    @abstractmethod
+    def stopDraw(self, temp_data: list):
+        """
+        接收一个零时数据判断是否要结束绘画
+        :param temp_data: (list)临时数据
+        :return: bool
+        """
+
+        return False

@@ -44,18 +44,19 @@ data = {
                 '中文_name': '标签',
                 'English_name': 'label',
                 'type': 'select',
-                '中文_options': ['人', '卡车', '汽车', '停车标志', '摩托车', '单车', '红绿灯', '公共汽车'],
+                '中文_options': ['人', '卡车', '汽车', '交通标志','停止标志-舍去', '摩托车', '单车', '红绿灯', '公共汽车'],
                 'English_options': [
                     'person',
                     'truck',
                     'car',
+                    'traffic_sign',
                     'stop_sign',
                     'motorcycle',
                     'bicycle',
                     'traffic_light',
                     'bus',
                 ],
-                'option_style': [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (255, 0, 255), (0, 255, 255),
+                'option_style': [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (255, 255, 0), (255, 0, 255), (0, 255, 255),
                                  (128, 0, 128), (255, 165, 0)]
             },
             '属性1': {
@@ -202,7 +203,7 @@ data = {
         # 展示文件类型
         'show_file_type': ['.png', '.jpg'],
         # 运行允许的模式
-        'role_mode': {'rect', 'poly', 'line', 'point'},
+        'role_mode': {'rect', 'poly', 'line', 'point', 'round'},
         # 'role_mode': {'rect'},
         # 绘画模式子模式（目前仅支持线模式的path选项与normal）
         'mode_type': 'path',

@@ -18,8 +18,6 @@ from cmw.model_tools import SelectDialog
 from utils import tools, data_proxy, tools_temp, translate
 
 
-# TODO： 图像打整体属性
-# TODO： 标注缓存 》 Ctrl + Z 上一步
 class Canvas(QtWidgets.QWidget):
     """
     图像标注基类
@@ -155,10 +153,10 @@ class Canvas(QtWidgets.QWidget):
         self.model_data: List[np.array] = []
         # 显示点的大小
         self.point_size: int = 3
-        # 当前绘制模式(rect|poly|line|point|None),当值为None时不具备标注功能
+        # 当前绘制模式(rect|poly|line|point|None|round),当值为None时不具备标注功能
         self._draw_mode = None
         # 预设模式
-        self._preinstall_modes = {'rect', 'poly', 'line', 'point', None}
+        self._preinstall_modes = {'rect', 'poly', 'line', 'point', None, 'round'}
         # 当前选中 [轮廓index, 点, 边标识]
         self.selected = Selected(self)
         # 鼠标位置
@@ -725,7 +723,7 @@ class Canvas(QtWidgets.QWidget):
             self.isDraw = True
             self.selected.clearSelect()
             self.isSave = False
-            if self._draw_mode == 'rect':
+            if self._draw_mode == 'rect' or self._draw_mode == 'round':
                 self.temp_data = [save_pos, save_pos]
             elif self._draw_mode == 'point':
                 if self.isCtrl:
@@ -741,7 +739,7 @@ class Canvas(QtWidgets.QWidget):
             self.right_mouse_click_pos = event.position()
             self.right_mouse_click = True
             if self.isDraw and self.temp_data:
-                if self._draw_mode == 'rect':
+                if self._draw_mode == 'rect' or self._draw_mode == 'round':
                     self.temp_data.clear()
                 else:
                     self.temp_data.pop()
@@ -793,7 +791,7 @@ class Canvas(QtWidgets.QWidget):
         if self.isDraw:
             self.selected.clearSelect()
             self.setCursor(QtCore.Qt.CursorShape.ArrowCursor)
-            if self._draw_mode == 'rect' and self.left_mouse_click:
+            if self._draw_mode in {'rect', 'round'} and self.left_mouse_click:
                 self.temp_data = [self.temp_data[0], self.mouse_pos]
         elif self.smear and self.left_mouse_click:
             if self.smearData():
@@ -903,6 +901,8 @@ class Canvas(QtWidgets.QWidget):
         if not self.isDraw:
             if event.key() == QtCore.Qt.Key.Key_1:
                 self.selectMode('rect')
+            elif event.key() == QtCore.Qt.Key.Key_6:
+                self.selectMode('round')
             elif event.key() == QtCore.Qt.Key.Key_2:
                 self.selectMode('poly')
             elif event.key() == QtCore.Qt.Key.Key_3:
@@ -914,7 +914,7 @@ class Canvas(QtWidgets.QWidget):
                 self.selectMode('point')
             elif event.key() == QtCore.Qt.Key.Key_5:
                 self.selectMode('normal')
-
+        print(event)
         self.keyPress(event)
         self.update()
 
@@ -997,7 +997,7 @@ class Canvas(QtWidgets.QWidget):
             if self._draw_mode == 'point':
                 move_data = [(self.mouse_pos, 1)]
                 pass
-            elif self._draw_mode != 'rect':
+            elif self._draw_mode not in {'rect', 'round'}:
                 move_data = [self.mouse_pos]
             else:
                 move_data = []
@@ -1065,6 +1065,8 @@ class Canvas(QtWidgets.QWidget):
         painter.setFont(self.draw_font)
         if data_type == 'rect':
             self._drawRect(mode_type, painter, draw_data, is_draw_point, style[2])
+        elif data_type == 'round':
+            self._drawRound(mode_type, painter, draw_data, is_draw_point, style[2])
         elif data_type == 'poly':
             self._drawPoly(mode_type, painter, draw_data, is_draw_point, style[2])
         elif data_type == 'point':
@@ -1104,6 +1106,25 @@ class Canvas(QtWidgets.QWidget):
         if len(draw_data) != 2: raise ValueError('rect array shape is incorrect')
         # 画笔配置
         painter.drawRect(QtCore.QRectF(*draw_data))
+        if self.isDrawPolyPoint or is_draw_point:
+            # 画笔配置
+            self._drawPoint(mode_type, painter, draw_data, point_style)
+        pass
+
+    def _drawRound(self, mode_type: str, painter: QtGui.QPainter, draw_data: List[QtCore.QPointF], is_draw_point: bool,
+                   point_style) -> None:
+        """
+        绘制矩形
+        :param mode_type: 模式类型
+        :param point_style: 点的颜色
+        :param is_draw_point: 是否是临时数据
+        :param draw_data: 数据
+        :param painter: 画笔(QtGui.QPainter)
+        :return:
+        """
+        if len(draw_data) != 2: raise ValueError('rect array shape is incorrect')
+        # 画笔配置
+        painter.drawEllipse(QtCore.QRectF(*draw_data))
         if self.isDrawPolyPoint or is_draw_point:
             # 画笔配置
             self._drawPoint(mode_type, painter, draw_data, point_style)
@@ -1252,7 +1273,7 @@ class Canvas(QtWidgets.QWidget):
         """
         if not self.isDraw: return
         copy_temp_data = self.temp_data.copy()
-        if self._draw_mode == 'rect':
+        if self._draw_mode in {'rect', 'round'}:
             copy_temp_data_x = [point.x() for point in copy_temp_data]
             copy_temp_data_y = [point.y() for point in copy_temp_data]
             copy_temp_data = [
@@ -1321,7 +1342,7 @@ class Canvas(QtWidgets.QWidget):
                     self.setCursor(QtCore.Qt.CursorShape.CrossCursor)
                     return
             # 矩形可调整边
-            if mode == 'rect':
+            if mode in {'rect', 'round'}:
                 min_x_point = 1 if data[0].x() > data[1].x() else 0
                 min_y_point = 1 if data[0].y() > data[1].y() else 0
                 x_set = {point.x() for point in data}
@@ -1434,7 +1455,7 @@ class Canvas(QtWidgets.QWidget):
         """
         if not self.selected.isSelect: return
         select = self.draw_store.readData(self.selected.polyIndex)
-        if not self.speed_up and select['mode'] != 'rect' and self.selected.selectState > 1:
+        if not self.speed_up and select['mode'] not in {'rect', 'round'} and self.selected.selectState > 1:
             is_verify = False
             if select['mode'] == 'poly' and len(select['data']) > 4:
                 is_verify = True
@@ -1483,11 +1504,14 @@ class Canvas(QtWidgets.QWidget):
         :param event: QtGui.QMouseEvent
         :return: None
         """
-        if self._draw_mode == 'rect' and len(self.temp_data) == 2 and not self.is_move:
+        if self._draw_mode in {'rect', 'round'} and len(self.temp_data) == 2 and not self.is_move:
             # 矩形数据完成
             self.drawStop()
             pass
         elif self._draw_mode == 'point' and len(self.temp_data) == self.draw_point_num:
+            self.drawStop()
+        elif self.drawPlug.getMode(self._draw_mode).stopDraw(self.temp_data):
+            # 绘制完成
             self.drawStop()
         pass
 

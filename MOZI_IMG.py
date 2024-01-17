@@ -42,16 +42,22 @@ from module.PlugFactory import PlugOption
 
 
 class MyMode(ModelMode):
-    name = 'plm'
-    rule = 1
+    name = 'round'
+    rule = 2
     is_fill = False
 
     def drawMode(self, mode_type: str, painter: QtGui.QPainter, draw_data: list[QtCore.QPointF], is_draw_point: bool,
                  point_style):
-        painter.drawPolygon(draw_data)
+        # 画笔配置
+        painter.drawRect(QtCore.QRectF(*draw_data))
 
     def drawData(self, mode_type: str, copy_temp_data: list, option_data: dict) -> tuple[list, dict]:
         return copy_temp_data, option_data
+
+    def stopDraw(self, temp_data: list):
+        if temp_data.__len__() == 2:
+            return True
+        return False
 
 
 class Module(model_image_canvas.Canvas):
@@ -65,6 +71,7 @@ class Module(model_image_canvas.Canvas):
     def __init__(self, option_filedata: dict):
         self.plugOption = PlugOption(**option_filedata)
         super().__init__(**self.plugOption.canvas_options)
+        # self.drawPlug.addDrawMode(MyMode())
 
     def getShowButton(self):
         return super().getShowButton()
@@ -78,6 +85,8 @@ class Module(model_image_canvas.Canvas):
 
     def keyPress(self, event: QtGui.QKeyEvent):
         super().keyPress(event)
+        # if event.key() == QtCore.Qt.Key.Key_9:
+        #     self.selectMode('round')
         pass
 
     def keyRelease(self, event: QtGui.QKeyEvent):
