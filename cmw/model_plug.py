@@ -19,7 +19,6 @@ class DrawPlug:
         :param mode_name:
         :return:
         """
-        print(mode_name, self.DrawMode)
         if mode_name not in self.DrawMode: raise ModuleNotFoundError('未找到对应绘制模块')
         return self.DrawMode[mode_name]
 
@@ -29,5 +28,4 @@ class DrawPlug:
         :param mode:
         :return:
         """
-        print(mode.name)
         self.DrawMode[mode.name] = mode

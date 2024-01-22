@@ -41,23 +41,23 @@ from cmw import model_image_canvas
 from module.PlugFactory import PlugOption
 
 
-class MyMode(ModelMode):
-    name = 'round'
-    rule = 2
-    is_fill = False
-
-    def drawMode(self, mode_type: str, painter: QtGui.QPainter, draw_data: list[QtCore.QPointF], is_draw_point: bool,
-                 point_style):
-        # 画笔配置
-        painter.drawRect(QtCore.QRectF(*draw_data))
-
-    def drawData(self, mode_type: str, copy_temp_data: list, option_data: dict) -> tuple[list, dict]:
-        return copy_temp_data, option_data
-
-    def stopDraw(self, temp_data: list):
-        if temp_data.__len__() == 2:
-            return True
-        return False
+# class MyMode(ModelMode):
+#     name = 'round'
+#     rule = 2
+#     is_fill = False
+#
+#     def drawMode(self, mode_type: str, painter: QtGui.QPainter, draw_data: list[QtCore.QPointF], is_draw_point: bool,
+#                  point_style):
+#         # 画笔配置
+#         painter.drawRect(QtCore.QRectF(*draw_data))
+#
+#     def drawData(self, mode_type: str, copy_temp_data: list, option_data: dict) -> tuple[list, dict]:
+#         return copy_temp_data, option_data
+#
+#     def stopDraw(self, temp_data: list):
+#         if temp_data.__len__() == 2:
+#             return True
+#         return False
 
 
 class Module(model_image_canvas.Canvas):

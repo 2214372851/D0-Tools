@@ -254,7 +254,7 @@ class Canvas(QtWidgets.QWidget):
         if mode_name == 'normal':
             mode_name = None
         self._draw_mode = mode_name
-        if mode_name not in self._preinstall_modes and mode_name != 'normal':
+        if mode_name not in self._preinstall_modes and mode_name != 'normal' and not mode_name:
             mode = self.drawPlug.getMode(mode_name)
             if mode_name in self.isFill: return
             self.isFill[mode_name] = mode.is_fill
@@ -1504,13 +1504,15 @@ class Canvas(QtWidgets.QWidget):
         :param event: QtGui.QMouseEvent
         :return: None
         """
+        if not self.isDraw: return
         if self._draw_mode in {'rect', 'round'} and len(self.temp_data) == 2 and not self.is_move:
             # 矩形数据完成
             self.drawStop()
             pass
         elif self._draw_mode == 'point' and len(self.temp_data) == self.draw_point_num:
             self.drawStop()
-        elif self.drawPlug.getMode(self._draw_mode).stopDraw(self.temp_data):
+        elif not self.is_move and self._draw_mode not in self._preinstall_modes and self.drawPlug.getMode(
+                self._draw_mode).stopDraw(self.temp_data):
             # 绘制完成
             self.drawStop()
         pass
